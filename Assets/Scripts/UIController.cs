@@ -30,12 +30,12 @@ public class UIController : MonoBehaviour
         }
         
         lobby.SetActive(false);
-        StartCoroutine(StartRacing());
+        GameManager.instance.StartGame();
     }
 
-    IEnumerator StartRacing()
+    public void GameOver()
     {
-        yield return null;
+        StopAllCoroutines();
+        lobby.SetActive(true);
     }
-
 }
